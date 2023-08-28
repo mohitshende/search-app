@@ -1,11 +1,13 @@
 import { Flex, Image } from "@chakra-ui/react";
 import SearchBar from "../components/SearchBar";
+import Logo from "/src/assets/logo.svg";
+import BackgroundImage from "/src/assets/bgImage.jpeg";
 
 function SearchPage() {
   return (
     <Flex
       height={"100vh"}
-      bgImage={"src/assets/bgImage.jpeg"}
+      bgImage={BackgroundImage}
       bgSize={"cover"}
       bgRepeat={"no-repeat"}
       bgPosition={"center"}
@@ -15,7 +17,7 @@ function SearchPage() {
       gap={"20px"}
     >
       <Flex width={"100%"} justifyContent={"flex-end"}>
-        <Image height={"45px"} src={"/src/assets/logo.svg"} alt="logo" />
+        <Image height={"45px"} src={Logo} alt="logo" />
       </Flex>
       <SearchBar />
     </Flex>
