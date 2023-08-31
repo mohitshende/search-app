@@ -16,7 +16,7 @@ export function filterProducts(products: IProduct[], filters: IFilters) {
 
     if (
       filters.rating.length > 0 &&
-      filters.rating.includes(Math.round(product.rating).toString())
+      !filters.rating.includes(Math.round(product.rating).toString())
     ) {
       return false;
     }
