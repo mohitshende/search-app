@@ -6,6 +6,7 @@ import { IProduct } from "../components/SuggestionBox";
 import Filters from "../components/Filters";
 import { useState } from "react";
 import Logo from "/src/assets/logo.svg";
+import { useNavigate } from "react-router-dom";
 
 export interface IFilters {
   brands: (string | number)[];
@@ -26,12 +27,19 @@ function SearchResultsPage() {
     priceRange: [],
     rating: [],
   });
+  const navigate = useNavigate();
 
   return (
     <Flex height={"100vh"} padding={"40px"} direction={"column"} gap={"48px"}>
       <Flex width={"100%"} justifyContent={"space-around"} gap={"20px"}>
         <SearchBar border={"1px solid black"} borderRadius={"13px"} />
-        <Image height={"44px"} src={Logo} alt="logo" />
+        <Image
+          height={"44px"}
+          src={Logo}
+          alt="logo"
+          cursor={"pointer"}
+          onClick={() => navigate("/")}
+        />
       </Flex>
       <Flex
         width={"100%"}
